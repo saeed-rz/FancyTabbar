@@ -19,7 +19,7 @@ struct TabItemView: View {
                 if self.viewRouter.currentPage != tabIndex {
                     tab.image.foregroundColor(tab.defaultColor)
                 } else {
-                    tab.selectedImage.foregroundColor(tab.selectedItemColor)
+                    tab.image.foregroundColor(tab.selectedItemColor)
                     Text(tab.title)
                         .font(.footnote)
                         .foregroundColor(tab.selectedItemColor)

@@ -10,15 +10,13 @@ public struct TabItem: Identifiable, Equatable {
     public var content: AnyView
     public var title: String
     public var image: Image
-    public var selectedImage: Image
     public var defaultColor: Color
     public var selectedItemColor: Color
 
-    public init(content: AnyView, title: String, image: Image, selectedImage: Image, defaultColor: Color, selectedColor: Color) {
+    public init(content: AnyView, title: String, image: Image, defaultColor: Color, selectedColor: Color) {
         self.content = content
         self.title = title
         self.image = image
-        self.selectedImage = selectedImage
         self.defaultColor = defaultColor
         self.selectedItemColor = selectedColor
     }
