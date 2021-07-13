@@ -2,7 +2,7 @@
 import SwiftUI
 
 public struct FancyTabbar: View {
-    @StateObject var viewRouter = ViewRouter()
+    @State var currentView = TabPage.tab1
     var tabItems: [TabItem]
 
     public init(tabs: [TabItem]) {
@@ -13,7 +13,7 @@ public struct FancyTabbar: View {
 
         VStack {
             ZStack {
-                tabItems[self.viewRouter.currentPage].content
+                tabItems[self.currentView.rawValue].content
             }
 
             Spacer()
@@ -21,7 +21,7 @@ public struct FancyTabbar: View {
             HStack{
 
                 ForEach(self.tabItems) { item in
-                    TabItemView(viewRouter: self.viewRouter, tab: item, tabIndex: self.tabItems.firstIndex(where: {$0 == item}) ?? 0)
+                    TabItemView(currentView: $currentView, tab: item)
                 }
             }
             .padding(.vertical,-10)

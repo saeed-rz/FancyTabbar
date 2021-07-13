@@ -5,21 +5,20 @@
 import SwiftUI
 
 struct TabItemView: View {
-    let viewRouter: ViewRouter
+    @Binding var currentView: TabPage
     let tab: TabItem
-    let tabIndex: Int
 
     var body: some View {
         Button(action: {
-            self.viewRouter.currentPage = tabIndex
+            self.currentView = tab.tabIndex
         }) {
 
             HStack{
 
-                if self.viewRouter.currentPage != tabIndex {
+                if self.currentView != tab.tabIndex {
                     tab.image.foregroundColor(tab.defaultColor)
                 } else {
-                    tab.selectedImage.foregroundColor(tab.selectedItemColor)
+                    tab.image.foregroundColor(tab.selectedItemColor)
                     Text(tab.title)
                         .font(.footnote)
                         .foregroundColor(tab.selectedItemColor)
