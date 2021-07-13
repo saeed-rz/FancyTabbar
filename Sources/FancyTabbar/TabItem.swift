@@ -12,13 +12,15 @@ public struct TabItem: Identifiable, Equatable {
     public var image: Image
     public var defaultColor: Color
     public var selectedItemColor: Color
+    public var tabIndex: TabPage
 
-    public init(content: AnyView, title: String, image: Image, defaultColor: Color, selectedColor: Color) {
+    public init(content: AnyView, title: String, image: Image, defaultColor: Color, selectedColor: Color, tabIndex: TabPage) {
         self.content = content
         self.title = title
         self.image = image
         self.defaultColor = defaultColor
         self.selectedItemColor = selectedColor
+        self.tabIndex = tabIndex
     }
 
     public static func == (lhs: TabItem, rhs: TabItem) -> Bool {
