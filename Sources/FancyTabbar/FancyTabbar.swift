@@ -24,7 +24,6 @@ public struct FancyTabbar: View {
                     TabItemView(currentView: $currentView, tab: item)
                 }
             }
-            .padding(.vertical,-10)
             .padding(.horizontal, 25)
             .background(Color.white)
             .animation(.spring())
